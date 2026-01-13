@@ -1,65 +1,180 @@
-import Image from "next/image";
+const menuSections = [
+  {
+    title: "Bebidas calientes",
+    note: "Espresso y especialidades",
+    items: [
+      { name: "Expresso" },
+      { name: "Expresso doble" },
+      { name: "Expresso affogato" },
+      { name: "Americano" },
+      { name: "Mocaccino" },
+      { name: "Latte" },
+      { name: "Latte con escencia" },
+      { name: "Cappuchino francés" },
+      { name: "Caramel Machiato" },
+      { name: "Dirty Matcha-Chai" },
+    ],
+  },
+  {
+    title: "Chocolate e infusiones",
+    note: "Calientes",
+    items: [
+      { name: "Chocolate" },
+      { name: "Chocolate con bombón" },
+      { name: "Chai (clásico, vainilla)" },
+      { name: "Matcha" },
+      { name: "Tisana frutal" },
+    ],
+  },
+  {
+    title: "Bebidas frías con café",
+    note: "Tamaño 12oz o 16oz.",
+    items: [
+      { name: "Café" },
+      { name: "Carajillo" },
+      { name: "Americano con coco spice" },
+      { name: "Americano" },
+      { name: "Latte frío" },
+      { name: "Dirty chai / matcha" },
+      { name: "Cappuccino" },
+      { name: "Caramel machiato" },
+    ],
+  },
+  {
+    title: "Mixología y coctelería",
+    note: "Bebidas frías sin café • 12oz o 16oz",
+    items: [
+      { name: "Chocolate" },
+      { name: "Matcha" },
+      { name: "Matcha ceremonial" },
+      { name: "Chai" },
+      { name: "Soda italiana" },
+    ],
+  },
+  {
+    title: "Frappé sin café",
+    note: "Sabores disponibles",
+    items: [
+      { name: "Tiramisú" },
+      { name: "Matcha" },
+      { name: "Chai" },
+      { name: "Choco-avellana" },
+      { name: "Taro" },
+      { name: "Fresas con crema" },
+      { name: "Mazapán" },
+      { name: "Flan" },
+      { name: "Galletas y crema" },
+      { name: "Cajeta" },
+      { name: "Oreo" },
+    ],
+  },
+  {
+    title: "Frappé con café",
+    note: "Sabores disponibles",
+    items: [
+      { name: "Café" },
+      { name: "Moka" },
+      { name: "Cappuccino" },
+    ],
+  },
+  {
+    title: "Smoothies (batidos)",
+    note: "Sabores disponibles",
+    items: [
+      { name: "Zarzamora" },
+      { name: "Frutos rojos" },
+      { name: "Fruta del dragón" },
+      { name: "Maracuyá" },
+    ],
+  },
+  {
+    title: "Chamoyadas",
+    note: "Sabores disponibles",
+    items: [
+      { name: "Sandía" },
+      { name: "Mango" },
+      { name: "Tamarindo" },
+      { name: "Maracuyá" },
+      { name: "Frutos tropicales" },
+    ],
+  },
+  {
+    title: "Extras",
+    note: "Agrega un toque extra",
+    items: [
+      { name: "Crema batida" },
+      { name: "Shot de escencia" },
+      { name: "Shot de espresso" },
+      { name: "Perlas explosivas" },
+    ],
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <main className="menu-page">
+      <div className="menu-shell">
+        <section className="menu-hero">
+          <div className="hero-title">
+            <img
+              src="/logo.png"
+              alt="Logo de Kaliko"
+              className="hero-logo"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <div className="hero-heading">
+              <p className="menu-subtitle">Menú</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="menu-grid">
+          {menuSections.map((section) => (
+            <article key={section.title} className="menu-section">
+              <div className="section-head">
+                <h2 className="section-title">{section.title}</h2>
+                {section.note ? (
+                  <p className="section-note">{section.note}</p>
+                ) : null}
+              </div>
+              <div className="menu-items">
+                {section.items.map((item) => (
+                  <div key={item.name} className="menu-item">
+                    <span className="item-name">{item.name}</span>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <footer className="menu-footer">
+          <p>
+            <a
+              href="https://instagram.com/kaliko_panycafe"
+              target="_blank"
+              rel="noreferrer"
+              className="menu-link"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="menu-link-icon"
+              >
+                <path
+                  d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.6a2.9 2.9 0 1 1 0-5.8 2.9 2.9 0 0 1 0 5.8Zm6-7.8a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M16.7 3H7.3A4.3 4.3 0 0 0 3 7.3v9.4A4.3 4.3 0 0 0 7.3 21h9.4A4.3 4.3 0 0 0 21 16.7V7.3A4.3 4.3 0 0 0 16.7 3Zm2.5 13.7a2.6 2.6 0 0 1-2.6 2.6H7.4a2.6 2.6 0 0 1-2.6-2.6V7.4a2.6 2.6 0 0 1 2.6-2.6h9.2a2.6 2.6 0 0 1 2.6 2.6Z"
+                  fill="currentColor"
+                />
+              </svg>
+              @kaliko_panycafe
+            </a>{" "}
+            · Tel. <strong>317 119 4321</strong>
+          </p>
+        </footer>
+      </div>
+    </main>
   );
 }
