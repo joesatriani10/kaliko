@@ -177,6 +177,8 @@ export default function Home() {
               );
             }
 
+            const items = section.items ?? [];
+
             return (
               <article key={section.title} className="menu-section">
                 <div className="section-head">
@@ -186,7 +188,7 @@ export default function Home() {
                   ) : null}
                 </div>
                 <div className="menu-items">
-                  {section.items.map((item) => (
+                  {items.map((item) => (
                     <div key={item.name} className="menu-item">
                       <span className="item-name">{item.name}</span>
                     </div>
