@@ -123,41 +123,65 @@ body {
   gap: 16px;
 }
 
+.menu-category {
+  grid-column: 1 / -1;
+  padding: 6px 2px 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(44, 25, 18, 0.6);
+}
+
+.menu-category-title {
+  display: inline-block;
+  line-height: 1.2;
+}
+
 .menu-section {
-  padding: 16px 18px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.98);
-  border: 1px solid var(--card-border);
-  box-shadow: 0 10px 22px rgba(43, 27, 20, 0.06);
+  padding: 10px 2px 14px;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   animation: rise 0.7s ease forwards;
 }
 
 .section-head {
   display: grid;
   gap: 4px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(44, 25, 18, 0.16);
 }
 
 .section-title {
   margin: 0;
   font-family: var(--font-display), "Georgia", serif;
-  font-size: 1.2rem;
-  letter-spacing: 0.02em;
-  color: var(--espresso);
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(44, 25, 18, 0.65);
 }
 
 .section-note {
   margin: 0;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(44, 25, 18, 0.55);
+  color: rgba(44, 25, 18, 0.5);
 }
 
 .menu-items {
   display: grid;
   gap: 8px;
   text-align: center;
+  text-transform: none;
+  color: rgba(44, 25, 18, 0.6);
 }
 
 .menu-item {
@@ -165,8 +189,9 @@ body {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(44, 25, 18, 0.1);
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(44, 25, 18, 0.12);
+  color: rgba(44, 25, 18, 0.6);
 }
 
 .menu-item::before {
@@ -180,7 +205,10 @@ body {
 
 .item-name {
   font-weight: 500;
-  font-size: 1.02rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  color: rgba(44, 25, 18, 0.6);
 }
 
 

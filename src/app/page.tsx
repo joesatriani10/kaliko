@@ -1,59 +1,87 @@
 const menuSections = [
   {
-    title: "Bebidas calientes",
-    note: "Espresso y especialidades",
+    type: "category",
+    title: "Bebidas Calientes",
+  },
+  {
+    type: "section",
+    title: "Café",
     items: [
       { name: "Expresso" },
       { name: "Expresso doble" },
       { name: "Expresso affogato" },
+    ],
+  },
+  {
+    type: "section",
+    title: "Bebidas con café",
+    note: "12oz o 16oz",
+    items: [
       { name: "Americano" },
       { name: "Mocaccino" },
       { name: "Latte" },
       { name: "Latte con escencia" },
-      { name: "Cappuchino francés" },
+      { name: "Cappuchino frances" },
       { name: "Caramel Machiato" },
       { name: "Dirty Matcha-Chai" },
     ],
   },
   {
-    title: "Chocolate e infusiones",
-    note: "Calientes",
+    type: "section",
+    title: "Bebidas sin café",
+    note: "12oz o 16oz",
     items: [
       { name: "Chocolate" },
-      { name: "Chocolate con bombón" },
+      { name: "Chocolate con bombon" },
       { name: "Chai (clásico, vainilla)" },
       { name: "Matcha" },
       { name: "Tisana frutal" },
     ],
   },
   {
-    title: "Bebidas frías con café",
-    note: "Tamaño 12oz o 16oz.",
+    type: "category",
+    title: "Bebidas Frias",
+  },
+  {
+    type: "section",
+    title: "Bebidas con café",
+    note: "12oz o 16oz",
     items: [
-      { name: "Café" },
-      { name: "Carajillo" },
-      { name: "Americano con coco spice" },
       { name: "Americano" },
-      { name: "Latte frío" },
-      { name: "Dirty chai / matcha" },
+      { name: "Iced Latte" },
+      { name: "Dirty Chai/ Matcha" },
       { name: "Cappuccino" },
-      { name: "Caramel machiato" },
+      { name: "Caramel Machiato" },
     ],
   },
   {
-    title: "Mixología y coctelería",
-    note: "Bebidas frías sin café • 12oz o 16oz",
+    type: "section",
+    title: "Bebidas sin café",
+    note: "12oz o 16oz",
     items: [
       { name: "Chocolate" },
       { name: "Matcha" },
       { name: "Matcha ceremonial" },
       { name: "Chai" },
-      { name: "Soda italiana" },
+      { name: "Soda Italiana" },
     ],
   },
   {
-    title: "Frappé sin café",
-    note: "Sabores disponibles",
+    type: "section",
+    title: "Mixología y Cocteleria",
+    items: [
+      { name: "Carajillo" },
+      { name: "Coco spice americano" },
+    ],
+  },
+  {
+    type: "category",
+    title: "Frappe",
+  },
+  {
+    type: "section",
+    title: "Bebidas sin café",
+    note: "12oz o 16oz",
     items: [
       { name: "Tiramisú" },
       { name: "Matcha" },
@@ -61,16 +89,17 @@ const menuSections = [
       { name: "Choco-avellana" },
       { name: "Taro" },
       { name: "Fresas con crema" },
-      { name: "Mazapán" },
+      { name: "Mazapan" },
       { name: "Flan" },
-      { name: "Galletas y crema" },
+      { name: "Cookies & cream" },
       { name: "Cajeta" },
       { name: "Oreo" },
     ],
   },
   {
-    title: "Frappé con café",
-    note: "Sabores disponibles",
+    type: "section",
+    title: "Bebidas con café",
+    note: "12oz o 16oz",
     items: [
       { name: "Café" },
       { name: "Moka" },
@@ -78,8 +107,13 @@ const menuSections = [
     ],
   },
   {
-    title: "Smoothies (batidos)",
-    note: "Sabores disponibles",
+    type: "category",
+    title: "Smothies",
+  },
+  {
+    type: "section",
+    title: "Sabores",
+    note: "12oz o 16oz",
     items: [
       { name: "Zarzamora" },
       { name: "Frutos rojos" },
@@ -88,10 +122,15 @@ const menuSections = [
     ],
   },
   {
+    type: "category",
     title: "Chamoyadas",
-    note: "Sabores disponibles",
+  },
+  {
+    type: "section",
+    title: "Sabores",
+    note: "12oz o 16oz",
     items: [
-      { name: "Sandía" },
+      { name: "Sandia" },
       { name: "Mango" },
       { name: "Tamarindo" },
       { name: "Maracuyá" },
@@ -99,8 +138,9 @@ const menuSections = [
     ],
   },
   {
+    type: "section",
     title: "Extras",
-    note: "Agrega un toque extra",
+    note: "12oz o 16oz",
     items: [
       { name: "Crema batida" },
       { name: "Shot de escencia" },
@@ -128,23 +168,33 @@ export default function Home() {
         </section>
 
         <section className="menu-grid">
-          {menuSections.map((section) => (
-            <article key={section.title} className="menu-section">
-              <div className="section-head">
-                <h2 className="section-title">{section.title}</h2>
-                {section.note ? (
-                  <p className="section-note">{section.note}</p>
-                ) : null}
-              </div>
-              <div className="menu-items">
-                {section.items.map((item) => (
-                  <div key={item.name} className="menu-item">
-                    <span className="item-name">{item.name}</span>
-                  </div>
-                ))}
-              </div>
-            </article>
-          ))}
+          {menuSections.map((section) => {
+            if (section.type === "category") {
+              return (
+                <div key={section.title} className="menu-category">
+                  <span className="menu-category-title">{section.title}</span>
+                </div>
+              );
+            }
+
+            return (
+              <article key={section.title} className="menu-section">
+                <div className="section-head">
+                  <h2 className="section-title">{section.title}</h2>
+                  {section.note ? (
+                    <p className="section-note">{section.note}</p>
+                  ) : null}
+                </div>
+                <div className="menu-items">
+                  {section.items.map((item) => (
+                    <div key={item.name} className="menu-item">
+                      <span className="item-name">{item.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
         </section>
 
         <footer className="menu-footer">
