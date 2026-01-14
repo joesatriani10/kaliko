@@ -168,10 +168,10 @@ export default function Home() {
         </section>
 
         <section className="menu-grid">
-          {menuSections.map((section) => {
+          {menuSections.map((section, index) => {
             if (section.type === "category") {
               return (
-                <div key={section.title} className="menu-category">
+                <div key={`${section.title}-${index}`} className="menu-category">
                   <span className="menu-category-title">{section.title}</span>
                 </div>
               );
@@ -180,7 +180,7 @@ export default function Home() {
             const items = section.items ?? [];
 
             return (
-              <article key={section.title} className="menu-section">
+              <article key={`${section.title}-${index}`} className="menu-section">
                 <div className="section-head">
                   <h2 className="section-title">{section.title}</h2>
                   {section.note ? (
