@@ -447,12 +447,23 @@ a {
   font-weight: 950;
   gap: 6px;
   letter-spacing: 0.08em;
+  opacity: 0;
   padding: 12px 15px;
+  pointer-events: none;
   position: fixed;
   right: max(18px, env(safe-area-inset-right));
   text-decoration: none;
   text-transform: uppercase;
+  transform: translateY(10px);
+  visibility: hidden;
   z-index: 20;
+}
+
+.back-top[data-visible="true"] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
 }
 
 .back-top svg {

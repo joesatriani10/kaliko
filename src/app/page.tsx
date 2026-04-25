@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BackToTopButton } from "./back-to-top-button";
 
 type MenuItem = {
   name: string;
@@ -330,15 +331,7 @@ export default function Home() {
         </footer>
       </section>
 
-      <a className="back-top" href="#top" aria-label="Regresar arriba">
-        <svg aria-hidden="true" viewBox="0 0 24 24">
-          <path
-            d="M12 5 5.5 11.5l1.4 1.4 4.1-4.1V20h2V8.8l4.1 4.1 1.4-1.4L12 5Z"
-            fill="currentColor"
-          />
-        </svg>
-        <span>Arriba</span>
-      </a>
+      <BackToTopButton />
     </main>
   );
 }
