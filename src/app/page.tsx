@@ -121,7 +121,7 @@ const menuSections: MenuEntry[] = [
       { name: "Taro" },
       { name: "Fresas Con Crema", image: "/menu/fresas.jpg" },
       { name: "Tizana Frappé", image: "/menu/tizana-frappe-thumb.jpeg" },
-      { name: "Mazapan" },
+      { name: "Mazapan", image: "/menu/mazapan-real.jpg" },
       { name: "Flan" },
       { name: "Cookies & Cream" },
       { name: "Cajeta" },
@@ -148,10 +148,10 @@ const menuSections: MenuEntry[] = [
     title: "Sabores",
     note: "12oz o 16oz",
     items: [
-      { name: "Zarzamora" },
+      { name: "Zarzamora", image: "/menu/zarzamora-real.webp" },
       { name: "Frutos Rojos", image: "/menu/frutos-rojos.jpg" },
       { name: "Fruta Del Dragón" },
-      { name: "Maracuyá" },
+      { name: "Maracuyá", image: "/menu/maracuya-real.webp" },
     ],
   },
   {
@@ -164,11 +164,11 @@ const menuSections: MenuEntry[] = [
     title: "Sabores",
     note: "12oz o 16oz",
     items: [
-      { name: "Sandia" },
+      { name: "Sandia", image: "/menu/sandia-real.jpeg" },
       { name: "Mango", image: "/menu/mango.jpg" },
-      { name: "Tamarindo" },
-      { name: "Maracuyá" },
-      { name: "Frutos Tropicales" },
+      { name: "Tamarindo", image: "/menu/tamarindo-real.webp" },
+      { name: "Maracuyá", image: "/menu/maracuya-real.webp" },
+      { name: "Frutos Tropicales", image: "/menu/frutos-tropicales-real.jpg" },
     ],
   },
   {
