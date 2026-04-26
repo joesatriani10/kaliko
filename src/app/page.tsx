@@ -122,7 +122,7 @@ const menuSections: MenuEntry[] = [
       { name: "Fresas Con Crema", image: "/menu/fresas.jpg" },
       { name: "Tizana Frappé", image: "/menu/tizana-frappe-thumb.jpeg" },
       { name: "Mazapan", image: "/menu/mazapan-real.jpg" },
-      { name: "Flan" },
+      { name: "Flan", image: "/menu/flan-real.jpg" },
       { name: "Cookies & Cream" },
       { name: "Cajeta" },
       { name: "Oreo" },
@@ -150,7 +150,7 @@ const menuSections: MenuEntry[] = [
     items: [
       { name: "Zarzamora", image: "/menu/zarzamora-real.webp" },
       { name: "Frutos Rojos", image: "/menu/frutos-rojos.jpg" },
-      { name: "Fruta Del Dragón" },
+      { name: "Fruta Del Dragón", image: "/menu/fruta-del-dragon-real.jpg" },
       { name: "Maracuyá", image: "/menu/maracuya-real.webp" },
     ],
   },
