@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BackToTopButton } from "./back-to-top-button";
+import { MenuImageModal } from "./menu-image-modal";
 
 type MenuItem = {
   name: string;
@@ -35,9 +36,9 @@ const menuSections: MenuEntry[] = [
     type: "section",
     title: "Café",
     items: [
-      { name: "Espresso", image: "/menu/espresso.jpg" },
-      { name: "Espresso Doble" },
-      { name: "Espresso Affogato" },
+      { name: "Espresso $28", image: "/menu/espresso.jpg" },
+      { name: "Espresso Doble $35" },
+      { name: "Espresso Affogato $50" },
     ],
   },
   {
@@ -46,12 +47,11 @@ const menuSections: MenuEntry[] = [
     note: "12oz o 16oz",
     items: [
       { name: "Americano $35 / $45", image: "/menu/americano.jpg" },
-      { name: "Mocaccino" },
-      { name: "Latte", image: "/menu/latte.jpg" },
-      { name: "Latte Con Escencia" },
-      { name: "Capuchino Francés", image: "/menu/capuchino.jpeg" },
-      { name: "Caramel Macchiato" },
-      { name: "Dirty Matcha-Chai" },
+      { name: "Mocaccino $60 / $70" },
+      { name: "Latte Con Escencia $60 / $70", image: "/menu/latte.jpg" },
+      { name: "Capuchino Francés $60 / $70", image: "/menu/capuchino.jpeg" },
+      { name: "Caramel Macchiato $60 / $70" },
+      { name: "Dirty Matcha-Chai $65 / $75" },
     ],
   },
   {
@@ -59,11 +59,11 @@ const menuSections: MenuEntry[] = [
     title: "Sin café",
     note: "12oz o 16oz",
     items: [
-      { name: "Chocolate", image: "/menu/chocolate.jpg" },
-      { name: "Chocolate Con Bombón" },
-      { name: "Chai (Clásico, Vainilla)" },
-      { name: "Matcha", image: "/menu/matcha.jpg" },
-      { name: "Tisana Frutal" },
+      { name: "Chocolate $50 / $60", image: "/menu/chocolate.jpg" },
+      { name: "Chocolate Con Bombón $55 / $65" },
+      { name: "Chai (Clásico, Vainilla) $50 / $60" },
+      { name: "Matcha $50 / $60", image: "/menu/matcha.jpg" },
+      { name: "Tisana Frutal $60 / $70" },
     ],
   },
   {
@@ -77,10 +77,11 @@ const menuSections: MenuEntry[] = [
     note: "12oz o 16oz",
     items: [
       { name: "Americano $40 / $50", image: "/menu/iced-americano.jpg" },
-      { name: "Iced Latte", image: "/menu/iced-latte-real.jpeg" },
-      { name: "Dirty Chai / Matcha" },
-      { name: "Cappuccino" },
-      { name: "Caramel Macchiato" },
+      { name: "Mocaccino $65 / $75" },
+      { name: "Iced Latte $60 / $70", image: "/menu/iced-latte-real.jpeg" },
+      { name: "Dirty Chai / Matcha $70 / $80" },
+      { name: "Cappuccino $60 / $70" },
+      { name: "Caramel Macchiato $65 / $75" },
     ],
   },
   {
@@ -88,20 +89,20 @@ const menuSections: MenuEntry[] = [
     title: "Sin café",
     note: "12oz o 16oz",
     items: [
-      { name: "Chocolate" },
-      { name: "Matcha" },
-      { name: "Matcha Strawberry", image: "/menu/matcha-strawberry.jpeg" },
-      { name: "Matcha Ceremonial" },
-      { name: "Chai" },
-      { name: "Soda Italiana", image: "/menu/soda-italiana.jpg" },
+      { name: "Chocolate $60 / $70" },
+      { name: "Matcha $60 / $70" },
+      { name: "Matcha Strawberry $70 / $80", image: "/menu/matcha-strawberry.jpeg" },
+      { name: "Matcha Ceremonial $70 / $80" },
+      { name: "Chai $60 / $70" },
+      { name: "Soda Italiana $40 / $50", image: "/menu/soda-italiana.jpg" },
     ],
   },
   {
     type: "section",
     title: "Mixología y Cocteleria",
     items: [
-      { name: "Carajillo", image: "/menu/carajillo.jpg" },
-      { name: "Coco Spice Americano" },
+      { name: "Carajillo $70", image: "/menu/carajillo.jpg" },
+      { name: "Coco Spice Americano $70" },
     ],
   },
   {
@@ -114,18 +115,19 @@ const menuSections: MenuEntry[] = [
     title: "Sin café",
     note: "12oz o 16oz",
     items: [
-      { name: "Tiramisú", image: "/menu/tiramisu.jpg" },
-      { name: "Matcha", image: "/menu/frappe-matcha.jpeg" },
-      { name: "Chai" },
-      { name: "Choco-Avellana" },
-      { name: "Taro" },
-      { name: "Fresas Con Crema", image: "/menu/fresas.jpg" },
-      { name: "Tizana Frappé", image: "/menu/tizana-frappe-thumb.jpeg" },
-      { name: "Mazapan", image: "/menu/mazapan-real.jpg" },
-      { name: "Flan", image: "/menu/flan-real.jpg" },
-      { name: "Cookies & Cream" },
-      { name: "Cajeta" },
-      { name: "Oreo" },
+      { name: "Tiramisú $60 / $70", image: "/menu/tiramisu.jpg" },
+      { name: "Matcha $60 / $70", image: "/menu/frappe-matcha.jpeg" },
+      { name: "Chai $60 / $70" },
+      { name: "Choco-Avellana $60 / $70" },
+      { name: "Chocomenta $60 / $70" },
+      { name: "Taro $60 / $70" },
+      { name: "Fresas Con Crema $60 / $70", image: "/menu/fresas.jpg" },
+      { name: "Tizana Frappé $60 / $70", image: "/menu/tizana-frappe-thumb.jpeg" },
+      { name: "Mazapan $60 / $70", image: "/menu/mazapan-real.jpg" },
+      { name: "Flan $60 / $70", image: "/menu/flan-real.jpg" },
+      { name: "Cookies & Cream $60 / $70" },
+      { name: "Cajeta $60 / $70" },
+      { name: "Caramelo $60 / $70" },
     ],
   },
   {
@@ -133,9 +135,9 @@ const menuSections: MenuEntry[] = [
     title: "Con café",
     note: "12oz o 16oz",
     items: [
-      { name: "Café", image: "/menu/cafe.jpg" },
-      { name: "Moka" },
-      { name: "Cappuccino" },
+      { name: "Café $60 / $70", image: "/menu/cafe.jpg" },
+      { name: "Moka $60 / $70" },
+      { name: "Cappuccino $60 / $70" },
     ],
   },
   {
@@ -148,10 +150,10 @@ const menuSections: MenuEntry[] = [
     title: "Sabores",
     note: "12oz o 16oz",
     items: [
-      { name: "Zarzamora", image: "/menu/zarzamora-real.webp" },
-      { name: "Frutos Rojos", image: "/menu/frutos-rojos.jpg" },
-      { name: "Fruta Del Dragón", image: "/menu/fruta-del-dragon-real.jpg" },
-      { name: "Maracuyá", image: "/menu/maracuya-real.webp" },
+      { name: "Zarzamora $50 / $60", image: "/menu/zarzamora-real.webp" },
+      { name: "Frutos Rojos $50 / $60", image: "/menu/frutos-rojos.jpg" },
+      { name: "Fruta Del Dragón $50 / $60", image: "/menu/fruta-del-dragon-real.jpg" },
+      { name: "Maracuyá $50 / $60", image: "/menu/maracuya-real.webp" },
     ],
   },
   {
@@ -164,22 +166,21 @@ const menuSections: MenuEntry[] = [
     title: "Sabores",
     note: "12oz o 16oz",
     items: [
-      { name: "Sandia", image: "/menu/sandia-real.jpeg" },
-      { name: "Mango", image: "/menu/mango.jpg" },
-      { name: "Tamarindo", image: "/menu/tamarindo-real.webp" },
-      { name: "Maracuyá", image: "/menu/maracuya-real.webp" },
-      { name: "Frutos Tropicales", image: "/menu/frutos-tropicales-real.jpg" },
+      { name: "Sandia $50 / $60", image: "/menu/sandia-real.jpeg" },
+      { name: "Mango $50 / $60", image: "/menu/mango.jpg" },
+      { name: "Tamarindo $50 / $60", image: "/menu/tamarindo-real.webp" },
+      { name: "Maracuyá $50 / $60", image: "/menu/maracuya-real.webp" },
+      { name: "Frutos Tropicales $50 / $60", image: "/menu/frutos-tropicales-real.jpg" },
     ],
   },
   {
     type: "section",
     title: "Extras",
-    note: "12oz o 16oz",
     items: [
-      { name: "Crema Batida" },
-      { name: "Shot De Escencia" },
-      { name: "Shot De Espresso" },
-      { name: "Perlas Explosivas" },
+      { name: "Crema Batida $10" },
+      { name: "Shot De Escencia $10" },
+      { name: "Shot De Espresso $10" },
+      { name: "Perlas Explosivas $10" },
     ],
   },
 ];
@@ -215,6 +216,21 @@ const slugify = (value: string) =>
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
+
+const splitMenuItem = (name: string) => {
+  const match = name.match(/^(.*?)(\s+\$\d+(?:\s\/\s\$\d+)?)$/);
+
+  return {
+    displayName: match ? match[1] : name,
+    price: match ? match[2].trim() : undefined,
+  };
+};
+
+const splitPrice = (price: string) => {
+  const [smallPrice, largePrice] = price.split(" / ");
+
+  return { smallPrice, largePrice };
+};
 
 export default function Home() {
   return (
@@ -279,28 +295,43 @@ export default function Home() {
                 <article className="menu-section" key={`${group.title}-${section.title}`}>
                   <div className="section-head">
                     <h3>{section.title}</h3>
-                    {section.note ? <span>{section.note}</span> : null}
+                    {section.note ? (
+                      <span className="section-size-label">
+                        <span>12oz</span>
+                        <span>o</span>
+                        <span>16oz</span>
+                      </span>
+                    ) : null}
                   </div>
 
                   <div className="item-list">
-                    {section.items.map((item) => (
-                      <div
-                        className={item.image ? "menu-item has-image" : "menu-item"}
-                        key={`${section.title}-${item.name}`}
-                      >
-                        {item.image ? (
-                          <Image
-                            src={item.image}
-                            alt=""
-                            width={112}
-                            height={112}
-                            className="item-image"
-                            loading="eager"
-                          />
-                        ) : null}
-                        <span>{item.name}</span>
-                      </div>
-                    ))}
+                    {section.items.map((item) => {
+                      const { displayName, price } = splitMenuItem(item.name);
+                      const priceParts = price ? splitPrice(price) : undefined;
+
+                      return (
+                        <div
+                          className={item.image ? "menu-item has-image" : "menu-item"}
+                          key={`${section.title}-${item.name}`}
+                        >
+                          {item.image ? (
+                            <MenuImageModal image={item.image} name={displayName} />
+                          ) : null}
+                          <span className="item-name">{displayName}</span>
+                          {priceParts ? (
+                            <span className={priceParts.largePrice ? "item-price item-price-pair" : "item-price"}>
+                              <span>{priceParts.smallPrice}</span>
+                              {priceParts.largePrice ? (
+                                <>
+                                  <span>/</span>
+                                  <span>{priceParts.largePrice}</span>
+                                </>
+                              ) : null}
+                            </span>
+                          ) : null}
+                        </div>
+                      );
+                    })}
                   </div>
                 </article>
               ))}
