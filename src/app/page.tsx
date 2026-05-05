@@ -45,7 +45,7 @@ const menuSections: MenuEntry[] = [
     title: "Bebidas con café",
     note: "12oz o 16oz",
     items: [
-      { name: "Americano", image: "/menu/americano.jpg" },
+      { name: "Americano $35 / $45", image: "/menu/americano.jpg" },
       { name: "Mocaccino" },
       { name: "Latte", image: "/menu/latte.jpg" },
       { name: "Latte Con Escencia" },
@@ -76,7 +76,7 @@ const menuSections: MenuEntry[] = [
     title: "Bebidas con café",
     note: "12oz o 16oz",
     items: [
-      { name: "Americano", image: "/menu/iced-americano.jpg" },
+      { name: "Americano $40 / $50", image: "/menu/iced-americano.jpg" },
       { name: "Iced Latte", image: "/menu/iced-latte-real.jpeg" },
       { name: "Dirty Chai / Matcha" },
       { name: "Cappuccino" },
