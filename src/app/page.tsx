@@ -42,7 +42,7 @@ const menuSections: MenuEntry[] = [
   },
   {
     type: "section",
-    title: "Bebidas con café",
+    title: "Con café",
     note: "12oz o 16oz",
     items: [
       { name: "Americano $35 / $45", image: "/menu/americano.jpg" },
@@ -56,7 +56,7 @@ const menuSections: MenuEntry[] = [
   },
   {
     type: "section",
-    title: "Bebidas sin café",
+    title: "Sin café",
     note: "12oz o 16oz",
     items: [
       { name: "Chocolate", image: "/menu/chocolate.jpg" },
@@ -73,7 +73,7 @@ const menuSections: MenuEntry[] = [
   },
   {
     type: "section",
-    title: "Bebidas con café",
+    title: "Con café",
     note: "12oz o 16oz",
     items: [
       { name: "Americano $40 / $50", image: "/menu/iced-americano.jpg" },
@@ -85,7 +85,7 @@ const menuSections: MenuEntry[] = [
   },
   {
     type: "section",
-    title: "Bebidas sin café",
+    title: "Sin café",
     note: "12oz o 16oz",
     items: [
       { name: "Chocolate" },
@@ -111,7 +111,7 @@ const menuSections: MenuEntry[] = [
   },
   {
     type: "section",
-    title: "Bebidas sin café",
+    title: "Sin café",
     note: "12oz o 16oz",
     items: [
       { name: "Tiramisú", image: "/menu/tiramisu.jpg" },
@@ -130,7 +130,7 @@ const menuSections: MenuEntry[] = [
   },
   {
     type: "section",
-    title: "Bebidas con café",
+    title: "Con café",
     note: "12oz o 16oz",
     items: [
       { name: "Café", image: "/menu/cafe.jpg" },
