@@ -478,7 +478,7 @@ a {
 }
 
 .image-modal-frame {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1;
   background: #f4eadc;
   border-radius: 18px;
   max-height: 72svh;
