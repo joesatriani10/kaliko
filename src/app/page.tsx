@@ -36,7 +36,7 @@ const menuSections: MenuEntry[] = [
     type: "section",
     title: "Café",
     items: [
-      { name: "Espresso $28", image: "/menu/espresso.jpg" },
+      { name: "Espresso $28", image: "/menu/espresso.png" },
       { name: "Espresso Doble $35", image: "/menu/Espresso doble.png" },
       { name: "Espresso Affogato $50", image: "/menu/Affogato.png" },
     ],
@@ -46,9 +46,9 @@ const menuSections: MenuEntry[] = [
     title: "Con café",
     note: "12oz o 16oz",
     items: [
-      { name: "Americano $35 / $45", image: "/menu/americano.jpg" },
+      { name: "Americano $35 / $45", image: "/menu/americano.png" },
       { name: "Mocaccino $60 / $70" },
-      { name: "Latte Con Escencia $60 / $70", image: "/menu/latte.jpg" },
+      { name: "Latte Con Escencia $60 / $70", image: "/menu/latte.png" },
       { name: "Capuchino Francés $60 / $70", image: "/menu/capuchino.png" },
       { name: "Caramel Macchiato $60 / $70" },
       { name: "Dirty Matcha-Chai $65 / $75" },
