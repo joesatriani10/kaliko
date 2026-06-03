@@ -136,7 +136,7 @@ const menuSections: MenuEntry[] = [
     title: "Con café",
     note: "12oz o 16oz",
     items: [
-      { name: "Café $60 / $70", image: "/menu/cafe.jpg" },
+      { name: "Café $60 / $70", image: "/menu/cafe.png" },
       { name: "Moka $60 / $70" },
       { name: "Cappuccino $60 / $70" },
     ],
