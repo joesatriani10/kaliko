@@ -119,7 +119,7 @@ const menuSections: MenuEntry[] = [
       { name: "Tiramisú $60 / $70", image: "/menu/tiramisu.png" },
       { name: "Matcha $60 / $70", image: "/menu/frappe-matcha.png" },
       { name: "Chai $60 / $70" },
-      { name: "Choco-Avellana $60 / $70" },
+      { name: "Choco-Avellana $60 / $70", image: "/menu/chocoavellana.png" },
       { name: "Chocomenta $60 / $70" },
       { name: "Taro $60 / $70" },
       { name: "Fresas Con Crema $60 / $70", image: "/menu/fresas.png" },
