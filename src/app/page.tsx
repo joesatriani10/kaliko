@@ -359,7 +359,21 @@ export default function Home() {
             </svg>
             @kaliko_panycafe
           </a>
-          <span>Tel. 317 119 4321</span>
+          <a
+            href="https://wa.me/523171194321"
+            target="_blank"
+            rel="noreferrer"
+            className="menu-link"
+            aria-label="Enviar mensaje por WhatsApp al 317 119 4321"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="menu-link-icon">
+              <path
+                d="M12.1 3A8.8 8.8 0 0 0 4.5 16.2L3.4 21l4.9-1.3A8.8 8.8 0 1 0 12.1 3Zm0 1.7a7.1 7.1 0 0 1 6.1 10.8 7.1 7.1 0 0 1-8.7 2.7l-.3-.1-2.9.8.8-2.8-.2-.3a7.1 7.1 0 0 1 5.2-11.1Zm-3.1 3.8c-.2 0-.5.1-.7.4-.2.3-.8.8-.8 2 0 1.2.9 2.4 1 2.5.1.2 1.8 2.8 4.4 3.8 2.2.9 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.3-1.7-.8c-.3-.1-.5-.2-.7.2l-.7.8c-.1.2-.3.2-.6.1-.3-.1-1.1-.4-2-1.2-.7-.7-1.2-1.5-1.4-1.8-.1-.3 0-.4.1-.6l.4-.4c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.4-.4-.4-.6-.4Z"
+                fill="currentColor"
+              />
+            </svg>
+            WhatsApp 317 119 4321
+          </a>
         </footer>
       </section>
 
