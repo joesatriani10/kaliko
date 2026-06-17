@@ -238,14 +238,16 @@ export default function Home() {
     <main id="top" className="menu-page">
       <header className="site-header">
         <a className="brand-mark" href="#menu" aria-label="Ir al menú">
-          <Image
-            src="/logo.png"
-            alt=""
-            width={96}
-            height={96}
-            className="brand-logo"
-            priority
-          />
+          <span className="brand-logo-frame">
+            <Image
+              src="/logo.png"
+              alt=""
+              fill
+              className="brand-logo"
+              priority
+              sizes="52px"
+            />
+          </span>
           <span>Kaliko Pan y Cafe</span>
         </a>
         <a className="header-action" href="#menu">
