@@ -30,7 +30,7 @@ export function BackToTopButton() {
     <div className="floating-actions">
       <a
         className="whatsapp-float"
-        href="https://wa.me/523171194321"
+        href="https://wa.me/523171194321?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido"
         target="_blank"
         rel="noreferrer"
         aria-label="Enviar mensaje por WhatsApp al 317 119 4321"

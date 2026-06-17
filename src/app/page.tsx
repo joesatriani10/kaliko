@@ -360,7 +360,7 @@ export default function Home() {
             @kaliko_panycafe
           </a>
           <a
-            href="https://wa.me/523171194321"
+            href="https://wa.me/523171194321?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido"
             target="_blank"
             rel="noreferrer"
             className="menu-link"
