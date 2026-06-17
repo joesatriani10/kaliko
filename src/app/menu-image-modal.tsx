@@ -11,6 +11,18 @@ type MenuImageModalProps = {
 
 export function MenuImageModal({ name, image }: MenuImageModalProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalImageLoaded, setIsModalImageLoaded] = useState(false);
+  const [shouldPreload, setShouldPreload] = useState(false);
+
+  const preloadImage = () => {
+    setShouldPreload(true);
+  };
+
+  const openModal = () => {
+    setIsModalImageLoaded(false);
+    setShouldPreload(true);
+    setIsOpen(true);
+  };
 
   const modal = (
     <div
@@ -29,12 +41,21 @@ export function MenuImageModal({ name, image }: MenuImageModalProps) {
           &times;
         </button>
         <div className="image-modal-frame">
+          <span
+            aria-hidden="true"
+            className="image-modal-skeleton"
+            data-visible={!isModalImageLoaded}
+          />
           <Image
             src={image}
             alt={name}
             fill
             sizes="(max-width: 680px) 88vw, 640px"
             className="image-modal-photo"
+            data-loaded={isModalImageLoaded}
+            priority
+            onLoad={() => setIsModalImageLoaded(true)}
+            onError={() => setIsModalImageLoaded(true)}
           />
         </div>
         <p>{name}</p>
@@ -48,7 +69,10 @@ export function MenuImageModal({ name, image }: MenuImageModalProps) {
         aria-label={`Ver imagen de ${name}`}
         className="item-image-button"
         type="button"
-        onClick={() => setIsOpen(true)}
+        onClick={openModal}
+        onFocus={preloadImage}
+        onPointerDown={preloadImage}
+        onPointerEnter={preloadImage}
       >
         <Image
           src={image}
@@ -59,6 +83,12 @@ export function MenuImageModal({ name, image }: MenuImageModalProps) {
           loading="eager"
         />
       </button>
+
+      {shouldPreload ? (
+        <span aria-hidden="true" className="image-preload">
+          <Image src={image} alt="" width={640} height={640} sizes="640px" />
+        </span>
+      ) : null}
 
       {isOpen ? createPortal(modal, document.body) : null}
     </>

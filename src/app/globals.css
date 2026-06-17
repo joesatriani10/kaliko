@@ -490,8 +490,41 @@ a {
   position: relative;
 }
 
+.image-modal-skeleton {
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 248, 236, 0.62), transparent),
+    linear-gradient(135deg, #ead7bf, #f7ead8 48%, #e5cfb3);
+  background-size: 220% 100%, 100% 100%;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.16s ease;
+  z-index: 1;
+}
+
+.image-modal-skeleton[data-visible="true"] {
+  opacity: 1;
+}
+
 .image-modal-photo {
   object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.16s ease;
+  z-index: 2;
+}
+
+.image-modal-photo[data-loaded="true"] {
+  opacity: 1;
+}
+
+.image-preload {
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  width: 1px;
 }
 
 .image-modal p {
@@ -787,6 +820,10 @@ a {
   .back-top:hover {
     transform: translateY(-1px);
   }
+
+  .image-modal-skeleton[data-visible="true"] {
+    animation: image-loading 1.05s ease infinite;
+  }
 }
 
 @keyframes rise {
@@ -798,5 +835,15 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes image-loading {
+  from {
+    background-position: 180% 0, 0 0;
+  }
+
+  to {
+    background-position: -180% 0, 0 0;
   }
 }
